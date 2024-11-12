@@ -76,3 +76,12 @@ npm run build
 - membre
   - login : membre@gmail.com
   - mot de passe : membre
+
+
+## autoload
+
+Il permet de autoload les class.
+
+````bash
+composer dump-autoload
+````

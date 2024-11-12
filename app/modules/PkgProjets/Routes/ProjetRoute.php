@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GestionProjets\ProjetController;
+use Modules\PkgProjets\Controllers\ProjetController;
 
 // routes for project management
 Route::middleware('auth')->group(function () {

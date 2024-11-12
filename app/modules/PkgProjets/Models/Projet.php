@@ -1,10 +1,10 @@
 <?php
-
-namespace App\Models\GestionProjets;
+ 
+namespace Modules\PkgProjets\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\Models\Tag;
 
 
 class Projet extends Model

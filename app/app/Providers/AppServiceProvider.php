@@ -12,7 +12,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Enregistrement statique des ServiceProviders 
+        // $this->app->register(PkgArticlesServiceProvider::class);
+        // $this->app->register(PkgCategoriesServiceProvider::class);
+
+        // Charger tous les ServiceProviders des modules
+        $this->loadModuleServiceProviders();
     }
 
     /**
@@ -20,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadMigrationsFrom($this->getMigrationPaths());
+        // $this->loadMigrationsFrom($this->getMigrationPaths());
         
-        // Bootstrap any application services.
+        // TODO : add comment and doc
         Paginator::useBootstrap();
     }
 
@@ -31,33 +36,92 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    protected function getMigrationPaths(): array
+    // protected function getMigrationPaths(): array
+    // {
+    //     $migrationsPath = database_path('migrations');
+    //     return $this->getAllSubdirectoriesOptimized($migrationsPath);
+    // }
+
+    // /**
+    //  * Get all subdirectories.
+    //  *
+    //  * @param string $dir
+    //  * @return array
+    //  */
+    // protected function getAllSubdirectoriesOptimized(string $dir): array
+    // {
+    //     $subdirectories = [];
+    //     $items = scandir($dir);
+
+    //     foreach ($items as $item) {
+    //         if ($item !== '.' && $item !== '..') {
+    //             $path = $dir . DIRECTORY_SEPARATOR . $item;
+    //             if (is_dir($path)) {
+    //                 $subdirectories[] = $path;
+    //                 $subdirectories = array_merge($subdirectories, $this->getAllSubdirectoriesOptimized($path));
+    //             }
+    //         }
+    //     }
+
+    //     return $subdirectories;
+    // }
+
+
+
+    
+/**
+     * Charger les ServiceProviders dynamiquement depuis les modules.
+     *
+     * @return void
+     */
+    protected function loadModuleServiceProviders()
     {
-        $migrationsPath = database_path('migrations');
-        return $this->getAllSubdirectoriesOptimized($migrationsPath);
+        // Définir le chemin vers le dossier contenant les ServiceProviders des modules
+        $moduleProvidersPath = base_path('modules'); // Path du dossier des modules
+        
+      
+        // Récupérer tous les fichiers de type ServiceProvider dans ce dossier
+        $providerFiles = glob($moduleProvidersPath . '/*/App/Providers/*ServiceProvider.php');
+
+      
+       
+        foreach ($providerFiles as $providerFile) {
+            // Inclure le fichier PHP du ServiceProvider
+            $providerClass = $this->getProviderClass($providerFile);
+
+        
+            // Vérifier si la classe existe, puis l'enregistrer
+            if (class_exists($providerClass)) {
+                
+                $this->app->register($providerClass);
+                
+            }
+        }
     }
 
     /**
-     * Get all subdirectories.
+     * Récupérer la classe du ServiceProvider à partir du fichier PHP.
      *
-     * @param string $dir
-     * @return array
+     * @param string $file
+     * @return string
      */
-    protected function getAllSubdirectoriesOptimized(string $dir): array
+    protected function getProviderClass(string $file): string
     {
-        $subdirectories = [];
-        $items = scandir($dir);
-
-        foreach ($items as $item) {
-            if ($item !== '.' && $item !== '..') {
-                $path = $dir . DIRECTORY_SEPARATOR . $item;
-                if (is_dir($path)) {
-                    $subdirectories[] = $path;
-                    $subdirectories = array_merge($subdirectories, $this->getAllSubdirectoriesOptimized($path));
-                }
-            }
+        
+        // Transformer le chemin de fichier en nom de classe PHP avec namespace
+        $relativePath = str_replace(base_path(), '', $file); // Obtenir le chemin relatif
+       
+        $relativePath = str_replace('/', '\\', $relativePath); // Convertir les / en \
+        $relativePath = trim($relativePath, '\\'); // Supprimer les \ en trop
+        $relativePath = str_replace('.php', '', $relativePath); 
+        // Remplacer uniquement "module" par "Module" au début du chemin
+       
+        if (substr($relativePath, 0, 7) === 'modules') {
+             $relativePath = 'Modules' . substr($relativePath, 7);
         }
-
-        return $subdirectories;
+    
+        // Exemple : Modules\PkgArticles\App\Providers\PkgArticlesServiceProvider
+        return  $relativePath;
     }
+
 }

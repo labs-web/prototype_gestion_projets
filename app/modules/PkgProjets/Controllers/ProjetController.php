@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\GestionProjets;
+namespace Modules\PkgProjets\Controllers;
 
-use App\Exceptions\GestionProjets\ProjectAlreadyExistException;
+
+
+use Modules\PkgProjets\App\Exceptions\ProjectAlreadyExistException;
 use App\Http\Controllers\Controller;
-use App\Imports\GestionProjets\ProjetImport;
-use App\Models\GestionProjets\Projet;
+use Modules\PkgProjets\App\Imports\ProjetImport;
+use Modules\PkgProjets\Models\Projet;
 use Illuminate\Http\Request;
-use App\Http\Requests\GestionProjets\projetRequest;
-use App\Repositories\GestionProjets\ProjetRepository;
+use Modules\PkgProjets\App\Requests\projetRequest;
+use Modules\PkgProjets\Repositories\ProjetRepository;
 use App\Http\Controllers\AppBaseController;
 use Carbon\Carbon;
-use App\Exports\GestionProjets\projetExport;
-use App\Repositories\GestionProjets\TagRepository;
+use Modules\PkgProjets\App\Exports\projetExport;
+use Modules\PkgProjets\Repositories\TagRepository;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ProjetController extends AppBaseController

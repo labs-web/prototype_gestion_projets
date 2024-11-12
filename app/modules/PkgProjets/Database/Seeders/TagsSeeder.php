@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Seeders\GestionProjets;
+namespace Modules\PkgProjets\Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\Models\Tag;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
@@ -22,7 +22,7 @@ class TagsSeeder extends Seeder
         Tag::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $csvFile = fopen(base_path("database/data/tags.csv"), "r");
+        $csvFile = fopen(base_path("modules/PkgProjets/Database/data/tags.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {

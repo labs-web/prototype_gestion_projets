@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Seeders\GestionProjets;
+namespace Modules\PkgProjets\Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
-use App\Models\GestionProjets\Projet;
+use Modules\PkgProjets\Models\Projet;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
@@ -22,7 +22,7 @@ class ProjetsSeeder extends Seeder
         Projet::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $csvFile = fopen(base_path("database/data/projets.csv"), "r");
+        $csvFile = fopen(base_path("modules/PkgProjets/Database/data/projets.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {

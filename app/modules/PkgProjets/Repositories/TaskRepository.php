@@ -1,5 +1,5 @@
 <?php
-namespace App\Repositories\GestionTasks;
+namespace Modules\PkgProjets\Repositories;
 
 use App\Models\GestionTasks\Task;
 use App\Repositories\BaseRepository;

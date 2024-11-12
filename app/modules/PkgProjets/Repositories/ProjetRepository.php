@@ -1,11 +1,11 @@
 <?php
-namespace App\Repositories\GestionProjets;
+namespace Modules\PkgProjets\Repositories;
 
-use App\Models\GestionProjets\Projet;
+use Modules\PkgProjets\Models\Projet;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\GestionProjets\ProjectAlreadyExistException;
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\App\Exceptions\ProjectAlreadyExistException;
+use Modules\PkgProjets\Models\Tag;
 
 
 /**

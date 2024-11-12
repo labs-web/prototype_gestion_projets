@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders\GestionProjets;
+namespace Modules\PkgProjets\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\GestionProjets\Taches;
+use Modules\PkgProjets\Models\Taches;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\User;

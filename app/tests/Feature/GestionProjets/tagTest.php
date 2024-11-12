@@ -4,10 +4,10 @@ namespace Tests\Feature\GestionProjets;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\Repositories\GestionProjets\TagRepository;
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\Repositories\TagRepository;
+use Modules\PkgProjets\Models\Tag;
 use Tests\TestCase;
-use App\Exceptions\GestionProjets\TagAlreadyExistException;
+use Modules\PkgProjets\App\Exceptions\TagAlreadyExistException;
 
 /**
  * Classe de test pour tester les fonctionnalités du module de tags.

@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositories\GestionProjets;
+namespace Modules\PkgProjets\Repositories;
 
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\Models\Tag;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\GestionProjets\TagAlreadyExistException;
+use Modules\PkgProjets\App\Exceptions\TagAlreadyExistException;
 
 /**
  * Classe TagRepository qui gère la persistance des tags dans la base de données.

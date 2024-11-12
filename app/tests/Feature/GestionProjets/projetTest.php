@@ -4,12 +4,12 @@ namespace Tests\Feature\GestionProjets;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\Repositories\GestionProjets\ProjetRepository;
-use App\Models\GestionProjets\Projet;
-use App\Models\GestionProjets\Tag;
+use Modules\PkgProjets\Repositories\ProjetRepository;
+use Modules\PkgProjets\Models\Projet;
+use Modules\PkgProjets\Models\Tag;
 
 use Tests\TestCase;
-use App\Exceptions\GestionProjets\ProjectAlreadyExistException;
+use Modules\PkgProjets\App\Exceptions\ProjectAlreadyExistException;
 
 /**
  * Classe de test pour tester les fonctionnalités du module de projets.

@@ -27,8 +27,12 @@ class PkgProjetsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         // Charger les routes du module
-        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
-
+        // Charger tous les fichiers de routes du dossier routes
+        $routeFiles = glob(__DIR__ . '/../../routes/*.php');
+        foreach ($routeFiles as $routeFile) {
+            $this->loadRoutesFrom($routeFile);
+        }
+        
         // Charger les vues du module
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'pkg_projets');
     }

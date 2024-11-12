@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GestionProjets\ProjetController;
-use App\Http\Controllers\GestionProjets\TagController;
+use Modules\PkgProjets\Controllers\ProjetController;
+use Modules\PkgProjets\Controllers\TagController;
 
 // routes for project tags management
 Route::middleware('auth')->group(function () {

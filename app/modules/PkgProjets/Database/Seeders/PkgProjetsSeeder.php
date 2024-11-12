@@ -1,29 +1,24 @@
 <?php
 
-namespace Database\Seeders;
+namespace Modules\PkgProjets\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Symfony\Component\Uid\NilUuid;
 
-use Database\Seeders\GestionProjets\{
+use Modules\PkgProjets\Database\Seeders\{
     ProjetsSeeder,
     TagsSeeder
 };
 
 
-class GestionProjetsSeeder extends Seeder
+class PkgProjetsSeeder extends Seeder
 {
 
     public function run(): void
     {
-        $this->call(GestionProjetsSeeder::Classes());
-    }
-
-    public static function Classes(): array
-    {
-        return [
+        $this->call([
             ProjetsSeeder::class,
             TagsSeeder::class
-        ];
+        ]);
     }
 }

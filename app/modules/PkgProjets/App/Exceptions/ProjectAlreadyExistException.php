@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions\GestionProjets;
+namespace Modules\PkgProjets\App\Exceptions;
 
 use App\Exceptions\BusinessException;
 
