@@ -20,7 +20,19 @@
                         <div class="inner">
                             <h3>23</h3>
                             <p>{{ __('Projets') }}</p>
-                        </div>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+
+</ul>
+</div>
+@endif
+
+</div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
