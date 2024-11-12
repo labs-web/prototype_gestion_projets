@@ -20,14 +20,20 @@ use Modules\PkgProjets\Controllers\Projet2Controller;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth')->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth')->name('home');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Auth::routes();
 
+// Il marque sur web.php et ne marche pas sur ProjetRoute.php
+// Route::middleware('auth')->group(function () {
+//     Route::prefix('/')->group(function () {
+//         Route::resource('projets', Projet2Controller::class);
+//     });
+// });
 
 // routes for project management
 // Route::middleware('auth')->group(function () {
@@ -41,3 +47,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::prefix('projets')->group(function () {
 //     Route::get('/', [Projet2Controller::class, 'index'])->name('projets.index');
 // });
+
+dd(auth()->user());
+Route::middleware('auth')->get('/test-projets', [Projet2Controller::class, 'index']);
