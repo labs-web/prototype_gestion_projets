@@ -45,6 +45,9 @@ php artisan key:generate
 
 ```bash
 php artisan migrate
+
+# ou 
+php artisan migrate:fresh
 ```
 8. Exécuter les seeders pour peupler la base de données :
    
