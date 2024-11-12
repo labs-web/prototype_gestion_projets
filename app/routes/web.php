@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
-use App\Http\Controllers\ProjetController;
+use Modules\PkgProjets\Controllers\Projet2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +20,9 @@ use App\Http\Controllers\ProjetController;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return view('home');
-// })->middleware('auth')->name('home');
+Route::get('/', function () {
+    return view('home');
+})->middleware('auth')->name('home');
 
 Auth::routes();
 
@@ -39,12 +39,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // });
 
 // Route::prefix('projets')->group(function () {
-
-//     // Route::get('/', function(){
-
-//     //     return "Bonjour11";
-//     // })->name('projets.index');
-
-//     Route::get('/', [ProjetController::class, 'index'])->name('projets1.index');
-  
+//     Route::get('/', [Projet2Controller::class, 'index'])->name('projets.index');
 // });

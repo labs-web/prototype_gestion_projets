@@ -55,7 +55,7 @@
 
                             </div>
                         </div>
-                        @include('GestionProjets.projet.table')
+                        @include('pkg_projets::projet.table')
                     </div>
                 </div>
             </div>
