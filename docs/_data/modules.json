@@ -1,7 +1,12 @@
 [ 
 {
+        "name":"pkg_utilisateurs",
+        "titre":"Gestion des utilisateurs",
+        "ordre": 1
+},
+{
     "name":"pkg_projets",
-    "titre":"Gestion projets",
-    "ordre": 1
+    "titre":"Gestion des projets",
+    "ordre": 2
 }
 ]
