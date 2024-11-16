@@ -1,3 +1,4 @@
+/* TODO Ali : Il faut télécharger le font en local */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
@@ -69,6 +70,9 @@ hr {
 
 @media print {
 
+	#menu_rapports{
+		display: none;
+	}
 	#presentation-icon,
 	hr {
 		display: none;
@@ -87,7 +91,7 @@ hr {
 	}
 }
 
-code {
+code:not(.language-mermaid) {
 	border: 1px solid #666;
 	border-radius: 2px;
 }
@@ -106,7 +110,8 @@ img {
 
 /* Nom de figure d'image */
 /* Par conception : le titre de figure est l'élément em situé aprés l'image */
-img+em {
+/* Il s'applique aussi sur un bloc de code  */
+img+em, pre+p>em  {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -143,7 +148,7 @@ h1::after {
   } */
 
 
-h1 {
+h1,h2 {
 	/* saute de page avant h1 */
 	page-break-before: always;
 	margin-top: 12.0pt;
@@ -153,35 +158,29 @@ h1 {
 	color: #2E74B5;
 }
 
-h2 {
+h3 {
 	font-size: 18.0pt;
 	margin: 1.5rem 0 1rem;
 	color: #2E74B5;
 }
 
-h3 {
+h4 {
 	font-size: 15.0pt;
 	margin: 0.75rem 0 0.5rem;
 	color: #1F4D78;
 }
 
-h4 {
+h5 {
 	font-size: 14.0pt;
 	margin: 0.5rem 0 0.25rem;
 	color: #2E74B5;
 	font-style: italic;
 }
 
-h5 {
+h6 {
 	font-size: 13.0pt;
 	margin: 0.25rem 0 0.2rem;
 	color: #2E74B5;
-}
-
-h6 {
-	font-size: 12.0pt;
-	margin: 1.2pt 0 1pt;
-	color: #1F4D78;
 }
 
 h1,
@@ -214,4 +213,23 @@ h5 {
 #table-de-matiere+ul li a:hover {
 	color: #777;
 	/* Change text color on hover */
+}
+
+#menu_rapports{
+	text-align: center;
+	margin: 5px;
+}
+
+#menu_rapports i {
+	color: #2E74B5;
+	font-size: 30px;
+	padding-right: 3px;
+}
+
+#menu_rapports i:hover {
+	color: #388bd7;
+}
+
+#menu_rapports i:visited {
+	color: #0c5294;
 }

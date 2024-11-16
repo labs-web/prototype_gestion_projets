@@ -1,4 +1,16 @@
-# lab_crud
+# prototype_gestion_projets
+
+Ce prototype sert à valider l'apprentissage de Laravel pour la réalisation d'une application de façon collaborative. Il donne un exemple complet pour l'utilisation de Laravel pour réaliser les fonctionnalité suivantes : 
+
+- Authentification
+- Autorisation 
+- Organisation d'une application Laravel Large 
+- Séparation d'une application Laravel en Larage en module
+- Configuration et paramétrage des module d'une application mono
+- Utilisation des git modules pour la gestion des de version de code par module dans github, et l'utilisation des droit d'accès sur github pour l'isolation des modules fe façon que un développeur ne peut modifier que les modules dont 'il a besoin d'accès.
+
+le prototype consiste à créer une application pour la gestion des projet et tâches avec la gestion des tâches pour projet. le prototype présente aux apprenants les tâche à faire pour un projet sans la gestion de réalisation suivi des tâches par le formateur.
+
 
 * **Fonctionnalités existantes:**
     * Système de sécurité et d'authentification

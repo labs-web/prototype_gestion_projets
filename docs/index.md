@@ -1,11 +1,16 @@
 ---
-layout: default
+layout: rapport
 order: 1
 ---
 
+# Rapports
 
-- [Rapport](https://labs-web.github.io/lab_crud/documentation/) 
-- [Présentation](https://labs-web.github.io/lab_crud/documentation/presentation.html#/) 
-- Gestion des Projet
-    - [Rapport Gestion des Projet](https://labs-web.github.io/lab_crud/documentation/Gestion-projets/)
-    - [Présentation Gestion des Projet](https://labs-web.github.io/lab_crud/documentation/Gestion-projets/presentation.html#/)
+<a href="{{ site.baseurl }}/pkg_global/rapport"> Rapport globale </a> 
+
+## Par packages
+
+<ul>
+  {% for package in site.data.modules %}
+    <li> <a href="{{ site.baseurl }}/{{ package.name }}/rapport"> {{ package.titre }} </a> </li>
+  {% endfor %}
+</ul>
