@@ -13,13 +13,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        @php
-                            // Generate the title using the title function
-                            use App\helpers\TranslationHelper;
-                            $lang = Config::get('app.locale');
-                            $translatedName = TranslationHelper::getTitle(__('GestionProjets/projet.singular'), $lang);
-                            echo $translatedName;
-                        @endphp
+                        {{curd_index_title('pkg_projets::projet'))}}
                     </h1>
                 </div>
 

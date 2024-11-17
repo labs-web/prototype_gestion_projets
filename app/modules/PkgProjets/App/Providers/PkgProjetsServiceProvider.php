@@ -45,7 +45,11 @@ class PkgProjetsServiceProvider extends ServiceProvider
         // Charger les vues du module
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'pkg_projets');
 
-        
+        $this->loadTranslationsFrom(
+            __DIR__ . '/../../resources/lang',
+            'pkg_projets'
+        );
+
     }
 
     protected function loadRoutes()
