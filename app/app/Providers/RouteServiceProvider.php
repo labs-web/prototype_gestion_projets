@@ -29,7 +29,8 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
 
-        $this->loadRoutes();
+        // Les routes de chaque modules seront charger par provider de module
+        // $this->loadRoutes();
     }
 
     /**

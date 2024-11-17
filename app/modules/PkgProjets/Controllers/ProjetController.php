@@ -51,7 +51,7 @@ class ProjetController extends AppBaseController
     {
         $dataToEdit = null;
         $tags = $tagRepository->all();
-        return view('GestionProjets.projet.create', compact('dataToEdit', 'tags'));
+        return view('pkg_projets::projet.create', compact('dataToEdit', 'tags'));
     }
 
 
@@ -73,7 +73,7 @@ class ProjetController extends AppBaseController
     public function show(string $id)
     {
         $fetchedData = $this->projectRepository->find($id);
-        return view('GestionProjets.projet.show', compact('fetchedData'));
+        return view('pkg_projets::projet.show', compact('fetchedData'));
     }
 
 
@@ -84,7 +84,7 @@ class ProjetController extends AppBaseController
         $dataToEdit->date_de_fin = Carbon::parse($dataToEdit->date_de_fin)->format('Y-m-d');
         $tags = $tagRepository->all();
 
-        return view('GestionProjets.projet.edit', compact('dataToEdit','tags'));
+        return view('pkg_projets::projet.edit', compact('dataToEdit','tags'));
     }
 
 

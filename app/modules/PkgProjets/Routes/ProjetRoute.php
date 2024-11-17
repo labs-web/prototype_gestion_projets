@@ -16,11 +16,11 @@ use Modules\PkgProjets\Controllers\ProjetController;
 
 
 
-// Route::prefix('/')->group(function () {
-//     Route::resource('projets', Projet2Controller::class);
-//     Route::get('projets/export', [ProjetController::class, 'export'])->name('projets.export');
-//     Route::post('projets/import', [ProjetController::class, 'import'])->name('projets.import');
-// });
+Route::prefix('/')->group(function () {
+    Route::resource('projets', ProjetController::class);
+    Route::get('projets/export', [ProjetController::class, 'export'])->name('projets.export');
+    Route::post('projets/import', [ProjetController::class, 'import'])->name('projets.import');
+});
 
 // Route::middleware('auth')->group(function () {
 //     Route::prefix('projets')->group(function () {

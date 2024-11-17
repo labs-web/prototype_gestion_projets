@@ -31,7 +31,10 @@ class PkgProjetsServiceProvider extends ServiceProvider
         // Charger les routes du module
         // Charger tous les fichiers de routes du dossier routes
         $routeFiles = glob(__DIR__ . '/../../routes/*.php');
-     
+ 
+        $routeFiles = File::allFiles(__DIR__ . '/../../Routes');
+
+
         foreach ($routeFiles as $routeFile) {
 
             $this->loadRouteFile($routeFile);
@@ -63,7 +66,7 @@ class PkgProjetsServiceProvider extends ServiceProvider
     protected function loadRouteFile($file)
     {
         $filePath = $file->getPathname();
-        $routePath = 'routes' . DIRECTORY_SEPARATOR . $file->getRelativePathname();
+        // $routePath = 'routes' . DIRECTORY_SEPARATOR . $file->getRelativePathname();
         $middleware = $this->getMiddleware($filePath);
 
         Route::middleware($middleware)->group(function () use ($filePath) {
@@ -71,7 +74,7 @@ class PkgProjetsServiceProvider extends ServiceProvider
         });
     }
 
-       /**
+    /**
      * Get middleware based on the route file.
      *
      * @param string $filePath

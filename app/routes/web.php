@@ -20,9 +20,9 @@ use Modules\PkgProjets\Controllers\Projet2Controller;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return view('home');
-// })->middleware('auth')->name('home');
+Route::get('/', function () {
+    return view('home');
+})->middleware('auth')->name('home');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -48,5 +48,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     Route::get('/', [Projet2Controller::class, 'index'])->name('projets.index');
 // });
 
-dd(auth()->user());
+// dd(auth()->user());
 Route::middleware('auth')->get('/test-projets', [Projet2Controller::class, 'index']);

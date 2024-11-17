@@ -13,11 +13,11 @@ Auth::routes() ;
 //     });
 // });
 
-Route::middleware('auth')->group(function () {
-    Route::resource('projets', Projet2Controller::class);
-});
+// Route::middleware('auth')->group(function () {
+//     Route::resource('projets', Projet2Controller::class);
+// });
 
-Route::middleware('auth')->group(function () {
-    Route::resource('tags', Projet2Controller::class);
-});
+// Route::middleware('auth')->group(function () {
+//     Route::resource('tags', Projet2Controller::class);
+// });
 

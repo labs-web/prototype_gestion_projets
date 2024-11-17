@@ -32,18 +32,18 @@ class TagController extends AppBaseController
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $tagsData = $this->tagRepository->searchData($searchQuery);
-                return view('GestionProjets.tag.index', compact('tagsData'))->render();
+                return view('pkg_projets::tag.index', compact('tagsData'))->render();
             }
         }
         $tagsData = $this->tagRepository->paginate();
-        return view('GestionProjets.tag.index', compact('tagsData'));
+        return view('pkg_projets::tag.index', compact('tagsData'));
     }
 
 
     public function create()
     {
         $dataToEdit = null;
-        return view('GestionProjets.tag.create', compact('dataToEdit'));
+        return view('pkg_projets::tag.create', compact('dataToEdit'));
     }
 
 
@@ -64,14 +64,14 @@ class TagController extends AppBaseController
     public function show(string $id)
     {
         $fetchedData = $this->tagRepository->find($id);
-        return view('GestionProjets.tag.show', compact('fetchedData'));
+        return view('pkg_projets::tag.show', compact('fetchedData'));
     }
 
 
     public function edit(string $id)
     {
         $dataToEdit = $this->tagRepository->find($id);
-        return view('GestionProjets.tag.edit', compact('dataToEdit'));
+        return view('pkg_projets::tag.edit', compact('dataToEdit'));
     }
 
 
