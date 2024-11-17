@@ -85,3 +85,37 @@ Il permet de autoload les class.
 ````bash
 composer dump-autoload
 ````
+
+Voici une version reformulée et plus claire de la section :
+
+
+
+## Instructions pour créer un prototype à partir d'un projet Laravel vierge
+
+<!-- TODO : Rédiger un tutoriel détaillé pour expliquer la création d’un prototype depuis un projet Laravel vierge -->
+
+### Étapes à suivre :
+
+1. **Créer un projet Laravel vierge :**  
+2. **Initialiser le contrôle de version :**  
+   Exécutez les commandes suivantes pour ajouter le projet au contrôle de version :  
+   ```bash
+   git init
+   git add .
+   git commit -m "Initialisation du projet Laravel vierge"
+   ```
+
+3. **Copier les fichiers du prototype :**  
+   Importez les fichiers du prototype dans le répertoire du projet Laravel vierge.
+
+4. **Vérifier les modifications :**  
+   Identifiez les fichiers modifiés ou ajoutés par rapport au projet vierge en utilisant :  
+   ```bash
+   git status
+   ```
+
+5. **Documenter les modifications :**  
+   Commentez chaque fichier ou modification pour expliquer leur rôle et leur impact dans le prototype.
+
+6. **Créer un tutoriel complet :**  
+   Rédigez un tutoriel qui explique pas à pas comment ajouter et modifier ces fichiers dans un projet Laravel vierge.
