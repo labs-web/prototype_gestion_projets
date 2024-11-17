@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.edit') . ' ' . __('GestionProjets/projet.singular'))
+@section('title', __('app.edit') . ' ' . __('pkg_projets::projet.singular'))
 
 @section('content')
     <div class="content-header">

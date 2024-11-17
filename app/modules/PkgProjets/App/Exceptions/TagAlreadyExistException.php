@@ -8,6 +8,6 @@ class TagAlreadyExistException extends BusinessException
 {
     public static function createTag()
     {
-        return new self(__('GestionProjets/tag/message.createTagException'));
+        return new self(__('pkg_projets::tag/message.createTagException'));
     }
 }

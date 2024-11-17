@@ -31,9 +31,9 @@ class tagRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'nom.required' => __('GestionProjets/tag/validation.nomRequired'),
-            'nom.max' => __('GestionProjets/tag/validation.nomMax'),
-            'description.max' => __('GestionProjets/tag/validation.descriptionMax'),
+            'nom.required' => __('pkg_projets::tag/validation.nomRequired'),
+            'nom.max' => __('pkg_projets::tag/validation.nomMax'),
+            'description.max' => __('pkg_projets::tag/validation.descriptionMax'),
            
         ];
     }

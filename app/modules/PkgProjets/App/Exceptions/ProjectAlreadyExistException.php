@@ -8,6 +8,6 @@ class ProjectAlreadyExistException extends BusinessException
 {
     public static function createProject()
     {
-        return new self(__('GestionProjets/projet/message.createProjectException'));
+        return new self(__('pkg_projets::projet/message.createProjectException'));
     }
 }

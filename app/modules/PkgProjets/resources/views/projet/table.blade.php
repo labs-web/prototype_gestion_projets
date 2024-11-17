@@ -2,9 +2,9 @@
     <table class="table table-striped text-nowrap">
         <thead>
             <tr>
-                <th>{{ __('GestionProjets/projet.singular') }}</th>
+                <th>{{ __('pkg_projets::projet.singular') }}</th>
                 <th>{{ __('app.description') }}</th>
-                <th>{{ __('GestionProjets/tag.plural') }}</th>
+                <th>{{ __('pkg_projets::tag.plural') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>

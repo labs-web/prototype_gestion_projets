@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('GestionProjets/tag.singular'))
+@section('title', __('pkg_projets::tag.singular'))
 
 @section('content')
     <div class="content-header">
@@ -13,12 +13,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        @php
-                            // Generate the title using the title function
-                            $lang = Config::get('app.locale');
-                            $translatedName = getTitle(__('GestionProjets/tag.plural'), $lang);
-                            echo $translatedName;
-                        @endphp
+                    {{curd_index_title('pkg_projets::tag')}}
                     </h1>
                 </div>
 
@@ -27,7 +22,7 @@
                         @can('create-TagController')
                             <a href="{{ route('tags.create') }}" class="btn btn-info">
                                 <i class="fas fa-plus"></i>
-                                {{ __('app.add') }} {{ __('GestionProjets/tag.singular') }}
+                                {{ __('app.add') }} {{ __('pkg_projets::tag.singular') }}
                             </a>
                         @endcan
                     </div>

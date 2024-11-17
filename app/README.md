@@ -4,7 +4,7 @@
 
 PHP 8.2.11 (cli) (construit le 1er octobre 2021 à 15h00) ou une version plus récente est requise.
 
-## Guide de Démarrage pour Lab CRUD
+## Guide de Démarrage pour Prototype
 
 1. Ouvrez votre terminal.
 2. Accédez au répertoire app

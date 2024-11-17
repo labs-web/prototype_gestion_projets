@@ -32,10 +32,10 @@ class projetRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'nom.required' => __('GestionProjets/projet/validation.nomRequired'),
-            'nom.max' => __('GestionProjets/projet/validation.nomMax'),
-            'description.max' => __('GestionProjets/projet/validation.descriptionMax'),
-           
+            'nom.required' => __('validation.nomRequired'),
+            'nom.max' => __('validation.nomMax'),
+            'description.max' => __('validation.descriptionMax'),
+            'tags' => __('validation.Required')
         ];
     }
 }

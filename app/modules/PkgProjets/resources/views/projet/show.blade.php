@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.show') . ' ' . __('GestionProjets/projet.singular'))
+@section('title', __('app.show') . ' ' . __('pkg_projets::projet.singular'))
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
@@ -41,7 +41,7 @@
                                 @endif
                             </div>
                             <div class="col-sm-12">
-                                <label for="tags">{{ __('GestionProjets/tag.plural') }}:</label>
+                                <label for="tags">{{ __('pkg_projets::tag.plural') }}:</label>
                                 <ul> 
                                     @foreach ($fetchedData->tags as $item)
                                         <li>{{ $item->nom }}</li>

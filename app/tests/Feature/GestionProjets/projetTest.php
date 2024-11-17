@@ -137,7 +137,7 @@ class projetTest extends TestCase
             $project = $this->projectRepository->create($projectData);
             $this->fail('Expected ProjectException was not thrown');
         } catch (ProjectAlreadyExistException $e) {
-            $this->assertEquals(__('GestionProjets/projet/message.createProjectException'), $e->getMessage());
+            $this->assertEquals(__('pkg_projets::projet/message.createProjectException'), $e->getMessage());
         } catch (\Exception $e) {
             $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
         }

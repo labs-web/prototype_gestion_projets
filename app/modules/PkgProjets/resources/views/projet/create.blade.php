@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.add') . ' ' . __('GestionProjets/projet.singular'))
+@section('title', curd_index_add_label('pkg_projets::projet'))
 
 @section('content')
     <div class="content-header">
@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="nav-icon fas fa-table"></i>
-                                {{ __('app.add') }} {{ __('GestionProjets/projet.singular') }}
+                                {{  curd_index_add_label('pkg_projets::projet') }}
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->

@@ -94,7 +94,7 @@ class tagTest extends TestCase
             $tag = $this->tagRepository->create($tagData);
             $this->fail('Expected ProjectException was not thrown');
         } catch (TagAlreadyExistException $e) {
-            $this->assertEquals(__('GestionProjets/tag/message.createTagException'), $e->getMessage());
+            $this->assertEquals(__('pkg_projets::tag/message.createTagException'), $e->getMessage());
         } catch (\Exception $e) {
             $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
         }
