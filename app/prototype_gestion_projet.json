@@ -1,0 +1,340 @@
+{
+  "projet_tags": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "projet_id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour projet_id"
+        }
+      },
+      {
+        "name": "tag_id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour tag_id"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [
+        {
+          "column": "projet_id",
+          "referencedTable": "projets",
+          "referencedColumn": "id"
+        },
+        {
+          "column": "tag_id",
+          "referencedTable": "tags",
+          "referencedColumn": "id"
+        }
+      ],
+      "manyToMany": []
+    },
+    "isPivotTable": true
+  },
+  "projets": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "nom",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour nom"
+        }
+      },
+      {
+        "name": "description",
+        "type": "varchar(255)",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour description"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [],
+      "manyToMany": [
+        {
+          "through": "projet_tags",
+          "with": "tags"
+        }
+      ]
+    },
+    "isPivotTable": false
+  },
+  "taches": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "nom",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour nom"
+        }
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour description"
+        }
+      },
+      {
+        "name": "project_id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour project_id"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [
+        {
+          "column": "project_id",
+          "referencedTable": "projets",
+          "referencedColumn": "id"
+        }
+      ],
+      "manyToMany": []
+    },
+    "isPivotTable": false
+  },
+  "tags": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "nom",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour nom"
+        }
+      },
+      {
+        "name": "description",
+        "type": "varchar(255)",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour description"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [],
+      "manyToMany": [
+        {
+          "through": "projet_tags",
+          "with": "projets"
+        }
+      ]
+    },
+    "isPivotTable": false
+  },
+  "users": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "name",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour name"
+        }
+      },
+      {
+        "name": "email",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour email"
+        }
+      },
+      {
+        "name": "email_verified_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour email_verified_at"
+        }
+      },
+      {
+        "name": "password",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour password"
+        }
+      },
+      {
+        "name": "remember_token",
+        "type": "varchar(100)",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour remember_token"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [],
+      "manyToMany": []
+    },
+    "isPivotTable": false
+  }
+}

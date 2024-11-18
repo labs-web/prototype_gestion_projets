@@ -1,0 +1,42 @@
+classDiagram
+
+    class Entite {
+        +int id
+        +string nom
+        +string description
+    }
+
+    class Attribut {
+        +int id
+        +string nom
+        +string description
+        +boolean est_nullable
+        +string valeur_par_defaut
+    }
+
+    class TypeAttribut {
+        +int id
+        +string nom
+        +string description
+    }
+
+    class Relation {
+        +int id
+        +string type_relation
+        +int entite_source_id
+        +int entite_cible_id
+        +string cle_etrangere
+        +string cle_associee
+    }
+
+    class Annotation {
+        +int id
+        +string nom
+        +string valeur
+    }
+
+Entite "1" --> "*" Attribut : possede
+Relation "1" --> "1" Entite : source
+Relation "1" --> "1" Entite : cible
+Attribut --> TypeAttribut : est_de_type
+Attribut --> Annotation : a_annotation
