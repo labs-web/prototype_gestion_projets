@@ -1,4 +1,59 @@
 {
+  "posts": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint unsigned",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour id"
+        }
+      },
+      {
+        "name": "nom",
+        "type": "varchar(255)",
+        "nullable": false,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour nom"
+        }
+      },
+      {
+        "name": "description",
+        "type": "varchar(255)",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour description"
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour created_at"
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true,
+        "default": null,
+        "annotations": {
+          "example": "Exemple pour updated_at"
+        }
+      }
+    ],
+    "relations": {
+      "oneToOne": [],
+      "manyToOne": [],
+      "manyToMany": []
+    },
+    "isPivotTable": false
+  },
   "projet_tags": {
     "columns": [
       {
