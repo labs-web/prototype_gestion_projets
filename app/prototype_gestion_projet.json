@@ -7,7 +7,6 @@
         "nullable": false,
         "default": null,
         "annotations": {
-          "example": "Exemple pour id"
         }
       },
       {
@@ -16,7 +15,6 @@
         "nullable": false,
         "default": null,
         "annotations": {
-          "example": "Exemple pour nom"
         }
       },
       {
