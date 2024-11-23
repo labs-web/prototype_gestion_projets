@@ -1,4 +1,5 @@
 <?php
+// Ce fichier est maintenu par ESSARRAJ Fouad
 
 namespace Modules\PkgBlog\Models;
 
@@ -10,9 +11,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        &#39;nom&#39;, &#39;description&#39;
-    ];
+    protected $fillable = ['nom', 'description'];
 
 
 }
