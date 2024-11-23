@@ -2,9 +2,9 @@
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
 
-namespace Modules\PkgPkgBlog\Repositories;
+namespace Modules\PkgBlog\Repositories;
 
-use Modules\PkgPkgBlog\Models\Post;
+use Modules\PkgBlog\Models\Post;
 use App\Repositories\BaseRepository;
 
 /**

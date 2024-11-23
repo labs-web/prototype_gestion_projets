@@ -1,7 +1,7 @@
 {{-- Ce fichier est maintenu par ESSARRAJ Fouad --}}  
 
 @extends('layouts.app')
-@section('title', __('app.edit') . ' ' . __('pkg_blog::post.singular'))
+@section('title', __('app.edit') . ' ' . __('PkgBlog::post.singular'))
 
 @section('content')
     <div class="content-header">
@@ -18,7 +18,7 @@
                             </h3>
                         </div>
                         <!-- Inclure le formulaire -->
-                        @include('pkg_blog::post.fields')
+                        @include('PkgBlog::post.fields')
                     </div>
                 </div>
             </div>

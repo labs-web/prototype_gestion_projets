@@ -1,7 +1,7 @@
 {{-- Ce fichier est maintenu par ESSARRAJ Fouad --}}  
 
 @extends('layouts.app')
-@section('title', __('app.show') + ' ' + __('pkg_blog::post.singular'))
+@section('title', __('app.show') + ' ' + __('PkgBlog::post.singular'))
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
@@ -37,7 +37,7 @@
                                 @endif
                             </div>
                             <div class="col-sm-12">
-                                <label for="tags">{{ __('pkg_blog::tag.plural') }}:</label>
+                                <label for="tags">{{ __('PkgBlog::tag.plural') }}:</label>
                                 <ul>
                                     @foreach ($fetchedData.tags as $item)
                                         <li>{{ $item->nom }}</li>

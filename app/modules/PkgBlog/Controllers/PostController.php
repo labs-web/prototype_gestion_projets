@@ -27,17 +27,17 @@ class PostController extends Controller
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $data = $this->postRepository->searchData($searchQuery);
-                return view('pkg_blog::post.index', compact('data'))->render();
+                return view('PkgBlog::post.index', compact('data'))->render();
             }
         }
 
         $data = $this->postRepository->paginate();
-        return view('pkg_blog::post.index', compact('data'));
+        return view('PkgBlog::post.index', compact('data'));
     }
 
     public function create()
     {
-        return view('pkg_blog::post.create');
+        return view('PkgBlog::post.create');
     }
 
     public function store(PostRequest $request)
@@ -50,13 +50,13 @@ class PostController extends Controller
     public function show(string $id)
     {
         $item = $this->postRepository->find($id);
-        return view('pkg_blog::post.show', compact('item'));
+        return view('PkgBlog::post.show', compact('item'));
     }
 
     public function edit(string $id)
     {
         $item = $this->postRepository->find($id);
-        return view('pkg_blog::post.edit', compact('item'));
+        return view('PkgBlog::post.edit', compact('item'));
     }
 
     public function update(PostRequest $request, string $id)

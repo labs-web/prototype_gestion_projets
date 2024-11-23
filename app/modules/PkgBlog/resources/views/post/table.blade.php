@@ -4,13 +4,13 @@
     <table class="table table-striped text-nowrap">
         <thead>
             <tr>
-                <th>{{ __('pkg_blog::post.nom') }}</th>
-                <th>{{ __('pkg_blog::post.description') }}</th>
+                <th>{{ __('PkgBlog::post.nom') }}</th>
+                <th>{{ __('PkgBlog::post.description') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($postData as $post)
+            @foreach ($data as $post)
                 <tr>
                     <td>{{ $post->nom }}</td>
                     <td>{{ $post->description }}</td>
@@ -65,6 +65,6 @@
     </div>
 
     <ul class="pagination m-0 float-right">
-        {{ $postData->onEachSide(1)->links() }}
+        {{ $data->onEachSide(1)->links() }}
     </ul>
 </div>

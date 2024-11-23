@@ -1,7 +1,7 @@
 {{-- Ce fichier est maintenu par ESSARRAJ Fouad --}}  
 
 @extends('layouts.app')
-@section('title', curd_index_add_label('pkg_blog::post'))
+@section('title', curd_index_add_label('PkgBlog::post'))
 
 @section('content')
     <div class="content-header">
@@ -14,11 +14,11 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="nav-icon fas fa-table"></i>
-                                {{ curd_index_add_label('pkg_blog::post') }}
+                                {{ curd_index_add_label('PkgBlog::post') }}
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->
-                        @include('pkg_blog::post.fields')
+                        @include('PkgBlog::post.fields')
                     </div>
                 </div>
             </div>

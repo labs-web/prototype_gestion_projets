@@ -2,6 +2,7 @@
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
 
+
 use Illuminate\Support\Facades\Route;
 use Modules\PkgBlog\Controllers\PostController;
 
