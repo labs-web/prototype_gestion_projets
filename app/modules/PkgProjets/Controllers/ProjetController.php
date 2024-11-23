@@ -2,8 +2,6 @@
 
 namespace Modules\PkgProjets\Controllers;
 
-
-
 use Modules\PkgProjets\App\Exceptions\ProjectAlreadyExistException;
 use App\Http\Controllers\Controller;
 use Modules\PkgProjets\App\Imports\ProjetImport;

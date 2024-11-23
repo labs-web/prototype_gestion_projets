@@ -1,6 +1,7 @@
 <?php
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
+
 namespace Modules\PkgBlog\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
