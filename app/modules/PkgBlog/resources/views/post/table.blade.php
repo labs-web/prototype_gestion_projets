@@ -5,8 +5,10 @@
         <thead>
             <tr>
                 <th>{{ ucfirst(__('PkgBlog::post.nom')) }}</th>
+                
                 <th>{{ ucfirst(__('PkgBlog::post.description')) }}</th>
-                <th class="text-center">{{ __('app.actions') }}</th>
+                
+                <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
         <tbody>

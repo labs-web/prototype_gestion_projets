@@ -2,6 +2,7 @@
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
 
+
 namespace Modules\PkgBlog\Repositories;
 
 use Modules\PkgBlog\Models\Post;
@@ -18,7 +19,8 @@ class PostRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-        'id', 'nom', 'description', 'created_at', 'updated_at'
+        'nom',
+        'description'
     ];
 
     /**
@@ -39,7 +41,6 @@ class PostRepository extends BaseRepository
         parent::__construct(new Post());
     }
 
-
     /**
      * Crée une nouvelle instance de post.
      *
@@ -48,7 +49,6 @@ class PostRepository extends BaseRepository
      */
     public function create(array $data)
     {
-
         $post = parent::create([
             'nom' => $data['nom'],
             'description' => $data['description'],
@@ -56,6 +56,4 @@ class PostRepository extends BaseRepository
 
         return $post;
     }
-
-
 }

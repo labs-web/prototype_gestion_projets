@@ -10,17 +10,10 @@ use Modules\PkgBlog\Controllers\PostController;
 Route::middleware('auth')->group(function () {
     Route::prefix('/')->group(function () {
         Route::resource('posts', PostController::class);
-        Route::get('posts/export', [PostController::class, 'export'])->name('posts.export');
-        Route::post('posts/import', [PostController::class, 'import'])->name('posts.import');
-    });
-});
-
-Route::prefix('/')->middleware('auth')->group(function () {
-    Route::resource('posts', PostController::class);
-
-    // Routes supplémentaires avec préfixe
-    Route::prefix('posts/data')->group(function () {
-        Route::get('export', [PostController::class, 'export'])->name('posts.export');
-        Route::post('import', [PostController::class, 'import'])->name('posts.import');
+        // Routes supplémentaires avec préfixe
+        Route::prefix('posts/data')->group(function () {
+            Route::get('posts/export', [PostController::class, 'export'])->name('posts.export');
+            Route::post('posts/import', [PostController::class, 'import'])->name('posts.import');
+        });
     });
 });

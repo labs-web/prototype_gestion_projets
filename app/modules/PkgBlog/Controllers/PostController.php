@@ -1,7 +1,9 @@
 <?php
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
+
 namespace Modules\PkgBlog\Controllers;
+
 
 use App\Http\Controllers\AppBaseController;
 use Modules\PkgBlog\App\Requests\PostRequest;
@@ -75,11 +77,9 @@ class PostController extends AppBaseController
 
     public function export()
     {
-        $projects = $this->postRepository->all();
-        return Excel::download(new PostExport($projects), 'post_export.xlsx');
+        $data = $this->postRepository->all();
+        return Excel::download(new PostExport($data), 'post_export.xlsx');
     }
-
-
     public function import(Request $request)
     {
         $request->validate([
@@ -89,8 +89,9 @@ class PostController extends AppBaseController
         try {
             Excel::import(new PostImport, $request->file('file'));
         } catch (\InvalidArgumentException $e) {
-            return redirect()->route('posts.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
+            return redirect()->route('posts.index')->withError('Invalid format or missing data.');
         }
-        return redirect()->route('posts.index')->with('success', __('pkg_posts::post.singular') . ' ' . __('app.addSucées'));
+
+        return redirect()->route('posts.index')->with('success', __('app.importSuccess'));
     }
 }

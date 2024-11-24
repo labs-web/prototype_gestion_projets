@@ -2,30 +2,39 @@
 
 <form action="{{ $item->id ? route('posts.update', $item->id) : route('posts.store') }}" method="POST">
     @csrf
+
     @if ($item->id)
         @method('PUT')
     @endif
 
     <div class="card-body">
+        
         <div class="form-group">
-            <label for="nom">{{ ucfirst(__('PkgBlog::post.nom') )  }}
+            <label for="nom">
+                {{ ucfirst(__('PkgBlog::post.nom')) }}
+                
                     <span class="text-danger">*</span>
+                
             </label>
-            <input name="nom" type="text" class="form-control" id="nom" placeholder="Entrez nom"
+            <input name="nom" type="input" class="form-control" id="nom" placeholder="Entrez nom"
                 value="{{ $item ? $item->nom : old('nom') }}">
             @error('nom')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        
         <div class="form-group">
-            <label for="description">{{ ucfirst(__('PkgBlog::post.description')) }}
+            <label for="description">
+                {{ ucfirst(__('PkgBlog::post.description')) }}
+                
             </label>
-            <input name="description" type="text" class="form-control" id="description" placeholder="Entrez Exemple pour description"
+            <input name="description" type="input" class="form-control" id="description" placeholder="Entrez description"
                 value="{{ $item ? $item->description : old('description') }}">
             @error('description')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        
     </div>
 
     <div class="card-footer">
