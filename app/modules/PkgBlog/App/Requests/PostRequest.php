@@ -24,11 +24,11 @@ class PostRequest extends FormRequest
 
     public function messages(): array
     {
-        return {
+        return [
             'nom.required' => __('validation.nomRequired'),
             'nom.max' => __('validation.nomMax'),
             'description.required' => __('validation.descriptionRequired'),
             'description.max' => __('validation.descriptionMax')
-        };
+        ];
     }
 }

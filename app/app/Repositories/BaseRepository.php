@@ -184,4 +184,8 @@ abstract class BaseRepository implements RepositoryInterface
         $record = $this->model->find($id);
         return $record->delete();
     }
+
+    public function createInstance(){
+        return $this->model::make();
+    }
 }

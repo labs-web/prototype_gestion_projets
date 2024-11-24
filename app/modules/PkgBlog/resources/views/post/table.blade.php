@@ -4,9 +4,9 @@
     <table class="table table-striped text-nowrap">
         <thead>
             <tr>
-                <th>{{ __('PkgBlog::post.nom') }}</th>
-                <th>{{ __('PkgBlog::post.description') }}</th>
-                <th class="text-center">{{ __('app.action') }}</th>
+                <th>{{ ucfirst(__('PkgBlog::post.nom')) }}</th>
+                <th>{{ ucfirst(__('PkgBlog::post.description')) }}</th>
+                <th class="text-center">{{ __('app.actions') }}</th>
             </tr>
         </thead>
         <tbody>

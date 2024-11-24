@@ -50,13 +50,12 @@ class PostRepository extends BaseRepository
     {
 
         $post = parent::create([
-            'id' => $data['id'],
-'nom' => $data['nom'],
-'description' => $data['description'],
-'created_at' => $data['created_at'],
-'updated_at' => $data['updated_at']
+            'nom' => $data['nom'],
+            'description' => $data['description'],
         ]);
 
         return $post;
     }
+
+
 }

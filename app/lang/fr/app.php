@@ -16,8 +16,8 @@ return [
     'description' => 'Description',
     'list' => 'List',
     'home' => 'Accueil',
-    'addSucées' => 'a été ajouté avec succès.',
-    'updateSucées' => 'a été mis à jour avec succès.',
-    'deleteSucées' => 'a été supprimé avec succès.',
+    'addSuccess' => 'a été ajouté avec succès.',
+    'updateSuccess' => 'a été mis à jour avec succès.',
+    'deleteSuccess' => 'a été supprimé avec succès.',
     'existdeja' => 'est déjà existant ',
 ];

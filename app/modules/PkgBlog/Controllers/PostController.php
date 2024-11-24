@@ -1,17 +1,17 @@
 <?php
 // Ce fichier est maintenu par ESSARRAJ Fouad
 
-
-
 namespace Modules\PkgBlog\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppBaseController;
 use Modules\PkgBlog\App\Requests\PostRequest;
 use Modules\PkgBlog\Repositories\PostRepository;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use Modules\PkgBlog\App\Exports\PostExport;
+use Modules\PkgBlog\App\Imports\PostImport;
 
-class PostController extends Controller
+class PostController extends AppBaseController
 {
     protected $postRepository;
 
@@ -37,7 +37,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('PkgBlog::post.create');
+        $item = $this->postRepository->createInstance();
+        return view('PkgBlog::post.create', compact('item'));
     }
 
     public function store(PostRequest $request)
@@ -70,5 +71,26 @@ class PostController extends Controller
     {
         $this->postRepository->destroy($id);
         return redirect()->route('posts.index')->with('success', __('app.deleteSuccess'));
+    }
+
+    public function export()
+    {
+        $projects = $this->postRepository->all();
+        return Excel::download(new PostExport($projects), 'post_export.xlsx');
+    }
+
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        try {
+            Excel::import(new PostImport, $request->file('file'));
+        } catch (\InvalidArgumentException $e) {
+            return redirect()->route('posts.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
+        }
+        return redirect()->route('posts.index')->with('success', __('pkg_posts::post.singular') . ' ' . __('app.addSucées'));
     }
 }

@@ -24,6 +24,8 @@ $(document).ready(function () {
     }
 
     // Fonction pour récupérer les données avec AJAX
+    // TODO : la fonctionne charge toujour la liste des projets et non la liste 
+    // de l'entity en CRUD
     function fetchData(page, searchValue) {
         $.ajax({
             url: "/projets/?page=" + page + "&searchValue=" + searchValue,

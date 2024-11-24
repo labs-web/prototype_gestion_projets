@@ -11,6 +11,7 @@ return [
     'back' => 'Retour',
     'name' => 'Nom',
     'action'=> 'Action',
+    'actions'=> 'Actions',
     'detail' => 'Detail',
     'description' => 'Description',
     'list' => 'List'
