@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- Auth::routes();
+Auth::routes();
 
 // Il marque sur web.php et ne marche pas sur ProjetRoute.php
 // Route::middleware('auth')->group(function () {

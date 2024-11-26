@@ -3,23 +3,25 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
+          "example": "Exemple pour id"
         }
       },
       {
         "name": "nom",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
+          "example": "Exemple pour nom"
         }
       },
       {
         "name": "description",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -28,7 +30,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -37,7 +39,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -56,7 +58,7 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -65,7 +67,7 @@
       },
       {
         "name": "projet_id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -74,7 +76,7 @@
       },
       {
         "name": "tag_id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -83,7 +85,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -92,7 +94,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -122,7 +124,7 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -131,7 +133,7 @@
       },
       {
         "name": "nom",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -140,7 +142,7 @@
       },
       {
         "name": "description",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -149,7 +151,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -158,7 +160,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -182,7 +184,7 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -191,7 +193,7 @@
       },
       {
         "name": "nom",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -200,7 +202,7 @@
       },
       {
         "name": "description",
-        "type": "text",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -209,7 +211,7 @@
       },
       {
         "name": "project_id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -218,7 +220,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -227,7 +229,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -252,7 +254,7 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -261,7 +263,7 @@
       },
       {
         "name": "nom",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -270,7 +272,7 @@
       },
       {
         "name": "description",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -279,7 +281,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -288,7 +290,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -312,7 +314,7 @@
     "columns": [
       {
         "name": "id",
-        "type": "bigint unsigned",
+        "type": "Integer",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -321,7 +323,7 @@
       },
       {
         "name": "name",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -330,7 +332,7 @@
       },
       {
         "name": "email",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -339,7 +341,7 @@
       },
       {
         "name": "email_verified_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -348,7 +350,7 @@
       },
       {
         "name": "password",
-        "type": "varchar(255)",
+        "type": "String",
         "nullable": false,
         "default": null,
         "annotations": {
@@ -357,7 +359,7 @@
       },
       {
         "name": "remember_token",
-        "type": "varchar(100)",
+        "type": "String",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -366,7 +368,7 @@
       },
       {
         "name": "created_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -375,7 +377,7 @@
       },
       {
         "name": "updated_at",
-        "type": "timestamp",
+        "type": "Date",
         "nullable": true,
         "default": null,
         "annotations": {
@@ -386,310 +388,6 @@
     "relations": {
       "oneToOne": [],
       "manyToOne": [],
-      "manyToMany": []
-    },
-    "isPivotTable": false
-  }
-,
-  "entites": {
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Identifiant unique de l'entité"
-        }
-      },
-      {
-        "name": "nom",
-        "type": "varchar(255)",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Nom de l'entité"
-        }
-      },
-      {
-        "name": "description",
-        "type": "text",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Description de l'entité"
-        }
-      },
-      {
-        "name": "created_at",
-        "type": "timestamp",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Date de création de l'entité"
-        }
-      },
-      {
-        "name": "updated_at",
-        "type": "timestamp",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Date de mise à jour de l'entité"
-        }
-      }
-    ],
-    "relations": {
-      "oneToOne": [],
-      "manyToOne": [],
-      "manyToMany": []
-    },
-    "isPivotTable": false
-  },
-  "attributs": {
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Identifiant unique de l'attribut"
-        }
-      },
-      {
-        "name": "nom",
-        "type": "varchar(255)",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Nom de l'attribut"
-        }
-      },
-      {
-        "name": "description",
-        "type": "text",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Description de l'attribut"
-        }
-      },
-      {
-        "name": "est_nullable",
-        "type": "boolean",
-        "nullable": false,
-        "default": false,
-        "annotations": {
-          "example": "Indique si l'attribut peut être nul"
-        }
-      },
-      {
-        "name": "valeur_par_defaut",
-        "type": "text",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Valeur par défaut de l'attribut"
-        }
-      },
-      {
-        "name": "entite_id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Référence à l'entité associée"
-        }
-      },
-      {
-        "name": "type_attribut_id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Référence au type de l'attribut"
-        }
-      }
-    ],
-    "relations": {
-      "oneToOne": [],
-      "manyToOne": [
-        {
-          "column": "entite_id",
-          "referencedTable": "entites",
-          "referencedColumn": "id"
-        },
-        {
-          "column": "type_attribut_id",
-          "referencedTable": "types_attributs",
-          "referencedColumn": "id"
-        }
-      ],
-      "manyToMany": []
-    },
-    "isPivotTable": false
-  },
-  "types_attributs": {
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Identifiant unique du type d'attribut"
-        }
-      },
-      {
-        "name": "nom",
-        "type": "varchar(255)",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Nom du type d'attribut"
-        }
-      },
-      {
-        "name": "description",
-        "type": "text",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Description du type d'attribut"
-        }
-      }
-    ],
-    "relations": {
-      "oneToOne": [],
-      "manyToOne": [],
-      "manyToMany": []
-    },
-    "isPivotTable": false
-  },
-  "relations": {
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Identifiant unique de la relation"
-        }
-      },
-      {
-        "name": "type_relation",
-        "type": "varchar(255)",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Type de la relation"
-        }
-      },
-      {
-        "name": "entite_source_id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Référence à l'entité source"
-        }
-      },
-      {
-        "name": "entite_cible_id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Référence à l'entité cible"
-        }
-      },
-      {
-        "name": "cle_etrangere",
-        "type": "varchar(255)",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Nom de la clé étrangère associée"
-        }
-      },
-      {
-        "name": "cle_associee",
-        "type": "varchar(255)",
-        "nullable": true,
-        "default": null,
-        "annotations": {
-          "example": "Nom de la clé associée"
-        }
-      }
-    ],
-    "relations": {
-      "oneToOne": [],
-      "manyToOne": [
-        {
-          "column": "entite_source_id",
-          "referencedTable": "entites",
-          "referencedColumn": "id"
-        },
-        {
-          "column": "entite_cible_id",
-          "referencedTable": "entites",
-          "referencedColumn": "id"
-        }
-      ],
-      "manyToMany": []
-    },
-    "isPivotTable": false
-  },
-  "annotations": {
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Identifiant unique de l'annotation"
-        }
-      },
-      {
-        "name": "nom",
-        "type": "varchar(255)",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Nom de l'annotation"
-        }
-      },
-      {
-        "name": "valeur",
-        "type": "text",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Valeur de l'annotation"
-        }
-      },
-      {
-        "name": "attribut_id",
-        "type": "bigint unsigned",
-        "nullable": false,
-        "default": null,
-        "annotations": {
-          "example": "Référence à l'attribut associé"
-        }
-      }
-    ],
-    "relations": {
-      "oneToOne": [],
-      "manyToOne": [
-        {
-          "column": "attribut_id",
-          "referencedTable": "attributs",
-          "referencedColumn": "id"
-        }
-      ],
       "manyToMany": []
     },
     "isPivotTable": false
