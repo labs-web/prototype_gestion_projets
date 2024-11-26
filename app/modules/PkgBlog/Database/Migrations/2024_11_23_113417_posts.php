@@ -17,8 +17,10 @@ return new class extends Migration {
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('description')->nullable();
+            $table->String('nom)';
+            $table->String('description)'->nullable();
+            $table->Date('created_at)'->nullable();
+            $table->Date('updated_at)'->nullable();
             $table->timestamps();
         });
     }
