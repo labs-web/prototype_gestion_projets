@@ -5,7 +5,7 @@
 
 namespace Modules\PkgBlog\App\Exports;
 
-use Modules\PkgBlog\Models\Post;
+use Modules\PkgBlog\Models\Categories;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
-class PostExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
+class CategoriesExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
 {
     protected $data;
 
@@ -25,23 +25,17 @@ class PostExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSt
     public function headings(): array
     {
         return [
-            'category_id',
-            'user_id',
-            'title',
-            'content',
-            'published_at',
+            'name',
+            'description',
         ];
     }
 
     public function collection()
     {
-        return $this->data->map(function ($post) {
+        return $this->data->map(function ($categories) {
             return [
-                'category_id' => $post->category_id,
-                'user_id' => $post->user_id,
-                'title' => $post->title,
-                'content' => $post->content,
-                'published_at' => $post->published_at,
+                'name' => $categories->name,
+                'description' => $categories->description,
             ];
         });
     }

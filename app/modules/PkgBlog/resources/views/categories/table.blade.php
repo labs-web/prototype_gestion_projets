@@ -4,44 +4,35 @@
     <table class="table table-striped text-nowrap">
         <thead>
             <tr>
-                <th>{{ ucfirst(__('PkgBlog::post.category_id')) }}</th>
+                <th>{{ ucfirst(__('PkgBlog::categories.name')) }}</th>
                 
-                <th>{{ ucfirst(__('PkgBlog::post.user_id')) }}</th>
-                
-                <th>{{ ucfirst(__('PkgBlog::post.title')) }}</th>
-                
-                <th>{{ ucfirst(__('PkgBlog::post.content')) }}</th>
-                
-                <th>{{ ucfirst(__('PkgBlog::post.published_at')) }}</th>
+                <th>{{ ucfirst(__('PkgBlog::categories.description')) }}</th>
                 
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $post)
+            @foreach ($data as $categories)
                 <tr>
-                    <td>{{ $post->category_id }}</td>
-                    <td>{{ $post->user_id }}</td>
-                    <td>{{ $post->title }}</td>
-                    <td>{{ $post->content }}</td>
-                    <td>{{ $post->published_at }}</td>
+                    <td>{{ $categories->name }}</td>
+                    <td>{{ $categories->description }}</td>
                     <td class="text-center">
-                        @can('show-PostController')
-                            <a href="{{ route('posts.show', $post) }}" class="btn btn-default btn-sm">
+                        @can('show-CategoriesController')
+                            <a href="{{ route('categories.show', $categories) }}" class="btn btn-default btn-sm">
                                 <i class="far fa-eye"></i>
                             </a>
                         @endcan
-                        @can('edit-PostController')
-                            <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-default">
+                        @can('edit-CategoriesController')
+                            <a href="{{ route('categories.edit', $categories) }}" class="btn btn-sm btn-default">
                                 <i class="fas fa-pen-square"></i>
                             </a>
                         @endcan
-                        @can('destroy-PostController')
-                            <form action="{{ route('posts.destroy', $post) }}" method="POST" style="display: inline;">
+                        @can('destroy-CategoriesController')
+                            <form action="{{ route('categories.destroy', $categories) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce post ?')">
+                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce categories ?')">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
@@ -55,8 +46,8 @@
 
 <div class="d-md-flex justify-content-between align-items-center p-2">
     <div class="d-flex align-items-center mb-2 ml-2 mt-2">
-        @can('import-PostController')
-            <form action="{{ route('posts.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
+        @can('import-CategoriesController')
+            <form action="{{ route('categories.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
                 id="importForm">
                 @csrf
                 <label for="upload" class="btn btn-default btn-sm font-weight-normal">
@@ -66,9 +57,9 @@
                 <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
             </form>
         @endcan
-        @can('export-PostController')
+        @can('export-CategoriesController')
             <form class="">
-                <a href="{{ route('posts.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
+                <a href="{{ route('categories.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
                     <i class="fas fa-file-export"></i>
                     {{ __('app.export') }}</a>
             </form>

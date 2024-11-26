@@ -17,18 +17,27 @@ class PostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nom' => 'required',
-            'description' => 'nullable'
+            'category_id' => 'required',
+            'user_id' => 'required',
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+            'published_at' => 'nullable'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'nom.required' => __('validation.nomRequired'),
-            'nom.max' => __('validation.nomMax'),
-            'description.required' => __('validation.descriptionRequired'),
-            'description.max' => __('validation.descriptionMax')
+            'category_id.required' => __('validation.category_idRequired'),
+            'category_id.max' => __('validation.category_idMax'),
+            'user_id.required' => __('validation.user_idRequired'),
+            'user_id.max' => __('validation.user_idMax'),
+            'title.required' => __('validation.titleRequired'),
+            'title.max' => __('validation.titleMax'),
+            'content.required' => __('validation.contentRequired'),
+            'content.max' => __('validation.contentMax'),
+            'published_at.required' => __('validation.published_atRequired'),
+            'published_at.max' => __('validation.published_atMax')
         ];
     }
 }

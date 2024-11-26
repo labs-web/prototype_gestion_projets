@@ -5,25 +5,22 @@
 
 namespace Modules\PkgBlog\Repositories;
 
-use Modules\PkgBlog\Models\Post;
+use Modules\PkgBlog\Models\Categories;
 use App\Repositories\BaseRepository;
 
 /**
- * Classe PostRepository pour gérer la persistance de l'entité Post.
+ * Classe CategoriesRepository pour gérer la persistance de l'entité Categories.
  */
-class PostRepository extends BaseRepository
+class CategoriesRepository extends BaseRepository
 {
     /**
-     * Les champs de recherche disponibles pour posts.
+     * Les champs de recherche disponibles pour categories.
      *
      * @var array
      */
     protected $fieldsSearchable = [
-        'category_id',
-        'user_id',
-        'title',
-        'content',
-        'published_at'
+        'name',
+        'description'
     ];
 
     /**
@@ -37,15 +34,15 @@ class PostRepository extends BaseRepository
     }
 
     /**
-     * Constructeur de la classe PostRepository.
+     * Constructeur de la classe CategoriesRepository.
      */
     public function __construct()
     {
-        parent::__construct(new Post());
+        parent::__construct(new Categories());
     }
 
     /**
-     * Crée une nouvelle instance de post.
+     * Crée une nouvelle instance de categories.
      *
      * @param array $data Données pour la création.
      * @return mixed

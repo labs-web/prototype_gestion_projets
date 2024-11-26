@@ -5,13 +5,13 @@
 namespace Modules\PkgBlog\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\PkgBlog\Models\Post;
+use Modules\PkgBlog\Models\Categories;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Schema;
 
-class PostSeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
     public function run(): void
     {
@@ -19,19 +19,16 @@ class PostSeeder extends Seeder
         $MembreRole = User::MEMBRE;
 
         Schema::disableForeignKeyConstraints();
-        Post::truncate();
+        Categories::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $csvFile = fopen(base_path("modules/PkgBlog/Database/data/posts.csv"), "r");
+        $csvFile = fopen(base_path("modules/PkgBlog/Database/data/categories.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== false) {
             if (!$firstline) {
-                Post::create([
-                    "category_id" => $data[0] ,
-                    "user_id" => $data[1] ,
-                    "title" => $data[2] ,
-                    "content" => $data[3] ,
-                    "published_at" => $data[4] 
+                Categories::create([
+                    "name" => $data[0] ,
+                    "description" => $data[1] 
                 ]);
             }
             $firstline = false;
@@ -51,27 +48,27 @@ class PostSeeder extends Seeder
         ];
 
         foreach ($actions as $action) {
-            Permission::create(['name' => $action . '-PostController', 'guard_name' => 'web']);
+            Permission::create(['name' => $action . '-CategoriesController', 'guard_name' => 'web']);
         }
 
         $admin = Role::where('name', $AdminRole)->first();
         $membre = Role::where('name', $MembreRole)->first();
 
         $admin->givePermissionTo([
-            'index-PostController',
-            'show-PostController',
-            'create-PostController',
-            'store-PostController',
-            'edit-PostController',
-            'update-PostController',
-            'destroy-PostController',
-            'export-PostController',
-            'import-PostController',
+            'index-CategoriesController',
+            'show-CategoriesController',
+            'create-CategoriesController',
+            'store-CategoriesController',
+            'edit-CategoriesController',
+            'update-CategoriesController',
+            'destroy-CategoriesController',
+            'export-CategoriesController',
+            'import-CategoriesController',
         ]);
 
         $membre->givePermissionTo([
-            'index-PostController',
-            'show-PostController'
+            'index-CategoriesController',
+            'show-CategoriesController'
         ]);
     }
 }

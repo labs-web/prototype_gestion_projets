@@ -15,12 +15,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->String('nom)';
-            $table->String('description)'->nullable();
-            $table->Date('created_at)'->nullable();
-            $table->Date('updated_at)'->nullable();
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->date('created_at')->nullable();
+            $table->date('updated_at')->nullable();
+
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('categories');
     }
 };

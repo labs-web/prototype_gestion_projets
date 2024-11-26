@@ -5,6 +5,9 @@
 return [
     'singular' => 'Post',
     'plural' => 'Posts',
-    'nom' => 'nom',
-    'description' => 'description',
+    'category_id' => 'category_id',
+    'user_id' => 'user_id',
+    'title' => 'title',
+    'content' => 'content',
+    'published_at' => 'published_at',
 ];

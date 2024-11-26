@@ -10,27 +10,69 @@
     <div class="card-body">
         
         <div class="form-group">
-            <label for="nom">
-                {{ ucfirst(__('PkgBlog::post.nom')) }}
+            <label for="category_id">
+                {{ ucfirst(__('PkgBlog::post.category_id')) }}
                 
                     <span class="text-danger">*</span>
                 
             </label>
-            <input name="nom" type="input" class="form-control" id="nom" placeholder="Entrez nom"
-                value="{{ $item ? $item->nom : old('nom') }}">
-            @error('nom')
+            <input name="category_id" type="input" class="form-control" id="category_id" placeholder="Entrez category_id"
+                value="{{ $item ? $item->category_id : old('category_id') }}">
+            @error('category_id')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="form-group">
-            <label for="description">
-                {{ ucfirst(__('PkgBlog::post.description')) }}
+            <label for="user_id">
+                {{ ucfirst(__('PkgBlog::post.user_id')) }}
+                
+                    <span class="text-danger">*</span>
                 
             </label>
-            <input name="description" type="input" class="form-control" id="description" placeholder="Entrez description"
-                value="{{ $item ? $item->description : old('description') }}">
-            @error('description')
+            <input name="user_id" type="input" class="form-control" id="user_id" placeholder="Entrez user_id"
+                value="{{ $item ? $item->user_id : old('user_id') }}">
+            @error('user_id')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        
+        <div class="form-group">
+            <label for="title">
+                {{ ucfirst(__('PkgBlog::post.title')) }}
+                
+                    <span class="text-danger">*</span>
+                
+            </label>
+            <input name="title" type="input" class="form-control" id="title" placeholder="Entrez title"
+                value="{{ $item ? $item->title : old('title') }}">
+            @error('title')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        
+        <div class="form-group">
+            <label for="content">
+                {{ ucfirst(__('PkgBlog::post.content')) }}
+                
+                    <span class="text-danger">*</span>
+                
+            </label>
+            <input name="content" type="input" class="form-control" id="content" placeholder="Entrez content"
+                value="{{ $item ? $item->content : old('content') }}">
+            @error('content')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        
+        <div class="form-group">
+            <label for="published_at">
+                {{ ucfirst(__('PkgBlog::post.published_at')) }}
+                
+            </label>
+            <input name="published_at" type="input" class="form-control" id="published_at" placeholder="Entrez published_at"
+                value="{{ $item ? $item->published_at : old('published_at') }}">
+            @error('published_at')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

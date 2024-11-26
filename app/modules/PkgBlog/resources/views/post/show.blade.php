@@ -25,16 +25,24 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="col-sm-12">
-                                <label for="nom">{{ ucfirst(__('PkgBlog::post.nom')) }}:</label>
-                                <p>{{ $item->nom }}</p>
+                                <label for="category_id">{{ ucfirst(__('PkgBlog::post.category_id')) }}:</label>
+                                <p>{{ $item->category_id }}</p>
                             </div>
                             <div class="col-sm-12">
-                                <label for="description">{{ ucfirst(__('PkgBlog::post.description')) }}:</label>
-                                @if ($item->description)
-                                    <p>{!! $item->description !!}</p>
-                                @else
-                                    <p class="text-secondary">Aucune information disponible</p>
-                                @endif
+                                <label for="user_id">{{ ucfirst(__('PkgBlog::post.user_id')) }}:</label>
+                                <p>{{ $item->user_id }}</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="title">{{ ucfirst(__('PkgBlog::post.title')) }}:</label>
+                                <p>{{ $item->title }}</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="content">{{ ucfirst(__('PkgBlog::post.content')) }}:</label>
+                                <p>{{ $item->content }}</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="published_at">{{ ucfirst(__('PkgBlog::post.published_at')) }}:</label>
+                                <p>{{ $item->published_at }}</p>
                             </div>
                         </div>
                     </div>

@@ -6,12 +6,12 @@
 namespace Modules\PkgBlog\App\Imports;
 
 use Carbon\Carbon;
-use Modules\PkgBlog\Models\Post;
+use Modules\PkgBlog\Models\Categories;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class PostImport implements ToModel, WithHeadingRow
+class CategoriesImport implements ToModel, WithHeadingRow
 {
     /**
      * Vérifie si une tâche avec les mêmes attributs existe déjà dans la base de données.
@@ -21,14 +21,14 @@ class PostImport implements ToModel, WithHeadingRow
      */
     private function recordExists(array $row): bool
     {
-        return Post::where('nom', $row['nom'])->exists();
+        return Categories::where('nom', $row['nom'])->exists();
     }
 
     /**
      * Crée ou met à jour un enregistrement à partir des données importées.
      *
      * @param array $row Ligne de données importée.
-     * @return <Post|null
+     * @return <Categories|null
      */
     public function model(array $row)
     {
@@ -37,12 +37,9 @@ class PostImport implements ToModel, WithHeadingRow
         }
 
         // Crée un nouvel enregistrement à partir des données importées
-        return new Post([
-            'category_id' => $row['category_id'],
-            'user_id' => $row['user_id'],
-            'title' => $row['title'],
-            'content' => $row['content'],
-            'published_at' => $row['published_at'],
+        return new Categories([
+            'name' => $row['name'],
+            'description' => $row['description'],
         ]);
     }
 }
