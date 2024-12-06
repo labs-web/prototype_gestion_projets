@@ -25,7 +25,7 @@
 
 
         <div class="form-group">
-            <label for="inputDescription">{{ __('pkg_projets::tag.plural') }}</label>
+            <label for="inputDescription">{{ __('PkgProjets::tag.plural') }}</label>
             <select class="select2" name="tags[]" multiple="multiple" style="width: 100%;">
                 @foreach ($tags as $tag)
                     <option value="{{ $tag->id }}" @if($dataToEdit && $dataToEdit->tags->contains($tag->id)) selected @endif>{{ $tag->nom }}</option>

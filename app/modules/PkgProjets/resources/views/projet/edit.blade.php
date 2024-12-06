@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.edit') . ' ' . __('pkg_projets::projet.singular'))
+@section('title', __('app.edit') . ' ' . __('PkgProjets::projet.singular'))
 
 @section('content')
     <div class="content-header">
@@ -17,7 +17,7 @@
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->
-                        @include('pkg_projets::projet.fields')
+                        @include('PkgProjets::projet.fields')
                     </div>
                 </div>
             </div>

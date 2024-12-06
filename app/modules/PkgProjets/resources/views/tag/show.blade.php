@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.show') . ' ' . __('pkg_projets::projet.singular'))
+@section('title', __('app.show') . ' ' . __('PkgProjets::projet.singular'))
 @section('content')
     <div class="content-header">
         <div class="container-fluid">

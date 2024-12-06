@@ -36,12 +36,12 @@ class ProjetController extends AppBaseController
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $projectData = $this->projectRepository->searchData($searchQuery);
-                return view('pkg_projets::projet.index', compact('projectData'))->render();
+                return view('PkgProjets::projet.index', compact('projectData'))->render();
             }
         }
         $projectData = $this->projectRepository->paginate();
       
-        return view('pkg_projets::projet.index', compact('projectData'));
+        return view('PkgProjets::projet.index', compact('projectData'));
     }
 
 
@@ -49,7 +49,7 @@ class ProjetController extends AppBaseController
     {
         $dataToEdit = null;
         $tags = $tagRepository->all();
-        return view('pkg_projets::projet.create', compact('dataToEdit', 'tags'));
+        return view('PkgProjets::projet.create', compact('dataToEdit', 'tags'));
     }
 
 
@@ -59,9 +59,9 @@ class ProjetController extends AppBaseController
         try {
             $validatedData = $request->validated();
             $this->projectRepository->create($validatedData);
-            return redirect()->route('projets.index')->with('success', __('pkg_projets::projet.singular') . ' ' . __('app.addSucées'));
+            return redirect()->route('projets.index')->with('success', __('PkgProjets::projet.singular') . ' ' . __('app.addSucées'));
         } catch (ProjectAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['project_exists' => __('pkg_projets::projet.singular') . ' ' . __('app.existdeja')]);
+            return back()->withInput()->withErrors(['project_exists' => __('PkgProjets::projet.singular') . ' ' . __('app.existdeja')]);
         } catch (\Exception $e) {
             return abort(500);
         }
@@ -71,7 +71,7 @@ class ProjetController extends AppBaseController
     public function show(string $id)
     {
         $fetchedData = $this->projectRepository->find($id);
-        return view('pkg_projets::projet.show', compact('fetchedData'));
+        return view('PkgProjets::projet.show', compact('fetchedData'));
     }
 
 
@@ -82,7 +82,7 @@ class ProjetController extends AppBaseController
         $dataToEdit->date_de_fin = Carbon::parse($dataToEdit->date_de_fin)->format('Y-m-d');
         $tags = $tagRepository->all();
 
-        return view('pkg_projets::projet.edit', compact('dataToEdit','tags'));
+        return view('PkgProjets::projet.edit', compact('dataToEdit','tags'));
     }
 
 
@@ -90,14 +90,14 @@ class ProjetController extends AppBaseController
     {
         $validatedData = $request->validated();
         $this->projectRepository->update($id, $validatedData);
-        return redirect()->route('projets.index', $id)->with('success', __('pkg_projets::projet.singular') . ' ' . __('app.updateSucées'));
+        return redirect()->route('projets.index', $id)->with('success', __('PkgProjets::projet.singular') . ' ' . __('app.updateSucées'));
     }
 
 
     public function destroy(string $id)
     {
         $this->projectRepository->destroy($id);
-        return redirect()->route('projets.index')->with('success', __('pkg_projets::projet.singular') . ' ' . __('app.deleteSucées'));
+        return redirect()->route('projets.index')->with('success', __('PkgProjets::projet.singular') . ' ' . __('app.deleteSucées'));
     }
 
 
@@ -120,6 +120,6 @@ class ProjetController extends AppBaseController
         } catch (\InvalidArgumentException $e) {
             return redirect()->route('projets.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }
-        return redirect()->route('projets.index')->with('success', __('pkg_projets::projet.singular') . ' ' . __('app.addSucées'));
+        return redirect()->route('projets.index')->with('success', __('PkgProjets::projet.singular') . ' ' . __('app.addSucées'));
     }
 }

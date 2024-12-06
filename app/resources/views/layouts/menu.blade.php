@@ -7,4 +7,7 @@
     </a>
 </li>
 
-@include('layouts.GestionProjets.GestionProjetsMenu')
+{{-- Charger les menus des packages dynamiquement --}}
+@foreach (loadDynamicMenus() as $menu)
+    {!! $menu !!}
+@endforeach

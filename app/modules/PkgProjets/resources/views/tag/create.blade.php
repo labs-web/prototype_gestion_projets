@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.add') . ' ' . __('pkg_projets::tag.singular'))
+@section('title', __('app.add') . ' ' . __('PkgProjets::tag.singular'))
 @section('content')
     <div class="content-header">
         @if ($errors->has('project_exists'))
@@ -22,11 +22,11 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="nav-icon fas fa-table"></i>
-                                {{ __('app.add') }} {{ __('pkg_projets::tag.singular') }}
+                                {{ __('app.add') }} {{ __('PkgProjets::tag.singular') }}
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->
-                        @include('pkg_projets::tag.fields')
+                        @include('PkgProjets::tag.fields')
                     </div>
                 </div>
             </div>

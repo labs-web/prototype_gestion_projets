@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title',curd_index_title('pkg_projets::projet'))
+@section('title',curd_index_title('PkgProjets::projet'))
 @section('content')
     <div class="content-header">
         @if (session('success'))
@@ -12,7 +12,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        {{curd_index_title('pkg_projets::projet')}}
+                        {{curd_index_title('PkgProjets::projet')}}
                     </h1>
                 </div>
 
@@ -21,7 +21,7 @@
                         @can('create-ProjetController')
                             <a href="{{ route('projets.create') }}" class="btn btn-info">
                                 <i class="fas fa-plus"></i>
-                                {{curd_index_add_label('pkg_projets::projet')}}
+                                {{curd_index_add_label('PkgProjets::projet')}}
                             </a>
                         @endcan
                     </div>
@@ -48,7 +48,7 @@
 
                             </div>
                         </div>
-                        @include('pkg_projets::projet.table')
+                        @include('PkgProjets::projet.table')
                     </div>
                 </div>
             </div>

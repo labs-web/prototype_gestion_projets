@@ -32,18 +32,18 @@ class TagController extends AppBaseController
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $tagsData = $this->tagRepository->searchData($searchQuery);
-                return view('pkg_projets::tag.index', compact('tagsData'))->render();
+                return view('PkgProjets::tag.index', compact('tagsData'))->render();
             }
         }
         $tagsData = $this->tagRepository->paginate();
-        return view('pkg_projets::tag.index', compact('tagsData'));
+        return view('PkgProjets::tag.index', compact('tagsData'));
     }
 
 
     public function create()
     {
         $dataToEdit = null;
-        return view('pkg_projets::tag.create', compact('dataToEdit'));
+        return view('PkgProjets::tag.create', compact('dataToEdit'));
     }
 
 
@@ -52,9 +52,9 @@ class TagController extends AppBaseController
         try {
             $validatedData = $request->validated();
             $this->tagRepository->create($validatedData);
-            return redirect()->route('tags.index')->with('success', __('pkg_projets::tag.singular') . ' ' . __('app.addSucées'));
+            return redirect()->route('tags.index')->with('success', __('PkgProjets::tag.singular') . ' ' . __('app.addSucées'));
         } catch (ProjectAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['tag_exists' => __('pkg_projets::projet/message.createProjectException')]);
+            return back()->withInput()->withErrors(['tag_exists' => __('PkgProjets::projet/message.createProjectException')]);
         } catch (\Exception $e) {
             return abort(500);
         }
@@ -64,14 +64,14 @@ class TagController extends AppBaseController
     public function show(string $id)
     {
         $fetchedData = $this->tagRepository->find($id);
-        return view('pkg_projets::tag.show', compact('fetchedData'));
+        return view('PkgProjets::tag.show', compact('fetchedData'));
     }
 
 
     public function edit(string $id)
     {
         $dataToEdit = $this->tagRepository->find($id);
-        return view('pkg_projets::tag.edit', compact('dataToEdit'));
+        return view('PkgProjets::tag.edit', compact('dataToEdit'));
     }
 
 
@@ -79,7 +79,7 @@ class TagController extends AppBaseController
     {
         $validatedData = $request->validated();
         $this->tagRepository->update($id, $validatedData);
-        return redirect()->route('tags.index', $id)->with('success', __('pkg_projets::tag.singular') . ' ' . __('app.updateSucées'));
+        return redirect()->route('tags.index', $id)->with('success', __('PkgProjets::tag.singular') . ' ' . __('app.updateSucées'));
     }
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('pkg_projets::tag.singular'))
+@section('title', __('PkgProjets::tag.singular'))
 
 @section('content')
     <div class="content-header">
@@ -13,7 +13,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                    {{curd_index_title('pkg_projets::tag')}}
+                    {{curd_index_title('PkgProjets::tag')}}
                     </h1>
                 </div>
 
@@ -22,7 +22,7 @@
                         @can('create-TagController')
                             <a href="{{ route('tags.create') }}" class="btn btn-info">
                                 <i class="fas fa-plus"></i>
-                                {{ __('app.add') }} {{ __('pkg_projets::tag.singular') }}
+                                {{ __('app.add') }} {{ __('PkgProjets::tag.singular') }}
                             </a>
                         @endcan
                     </div>
@@ -49,7 +49,7 @@
 
                             </div>
                         </div>
-                        @include('pkg_projets::tag.table')
+                        @include('PkgProjets::tag.table')
                     </div>
                 </div>
             </div>
