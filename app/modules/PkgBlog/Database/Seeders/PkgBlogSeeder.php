@@ -10,6 +10,6 @@ class PkgBlogSeeder extends CoreSeeder
 {
     public function run(): void
     {
-        parent::load_and_run(__DIR__,__NAMESPACE__);
+        parent::loadAndRun(__DIR__,__NAMESPACE__);
     }
 }

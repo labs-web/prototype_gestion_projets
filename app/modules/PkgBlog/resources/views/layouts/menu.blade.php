@@ -1,6 +1,6 @@
 {{-- Ce fichier est maintenu par ESSARRAJ Fouad --}}  
 
-<li class="nav-item has-treeview">
+<li class="nav-item has-treeview {{ Request::is('PkgBlog*') ? 'menu-open' : '' }}">
     <a href="#" class="nav-link nav-link {{ Request::is('PkgBlog*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-table"></i>
         <p>
@@ -10,9 +10,9 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="{{ route('Category.index') }}" class="nav-link ">
+            <a href="{{ route('categories.index') }}" class="nav-link {{ Request::is('PkgBlog/categories') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-table"></i>
-                <p>Category</p>
+                <p>Categories</p>
             </a>
         </li>
     </ul>

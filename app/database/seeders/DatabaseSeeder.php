@@ -26,8 +26,12 @@ class DatabaseSeeder extends Seeder
 
     public function run_modules_seeders():void{
 
+        // TODO: utilisation de l'odre depuis le fichier modules.json ou c'est mieu 
+        // d'ajouter l'ordre dans le schema
 
-        // TODO: utilisation de l'odre de puis le fichier modules.json
+        $this->command->info('Parcourir tous les modules et exécuter leurs seeders');
+
+        
         
         // Récupérer tous les dossiers de modules
         $modulesPath = base_path('modules');
@@ -42,11 +46,13 @@ class DatabaseSeeder extends Seeder
             // Trouver le seeder principal du module en recherchant le fichier de seeder
             $seederFile = $module . '/Database/Seeders/' . Str::studly(basename($module)) . 'Seeder.php';
 
-            // dd( $seederFile );
             // Vérifier si le fichier de seeder existe
             if (File::exists($seederFile)) {
+
                 // Appeler le seeder du module
+                
                 $seederClass = 'Modules\\' . Str::studly(basename($module)) . '\\Database\\Seeders\\' . Str::studly(basename($module)) . 'Seeder';
+                $this->command->info('Appeler le seeder :' . $seederClass);
                 $this->call($seederClass);
             }
         }
