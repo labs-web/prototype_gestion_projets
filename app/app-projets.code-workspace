@@ -4,8 +4,7 @@
 			"path": "./"
 		}	,
 		{
-			"path": "./modules",
-			"name": "Modules"
+			"path": "./modules"
 		},
 	],
 	"settings": {}
